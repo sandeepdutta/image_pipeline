@@ -7,7 +7,7 @@ if(NOT CMAKE_CXX_STANDARD)
 endif()
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_compile_options(-Wall -Wextra -Wpedantic -g3 -O2)
 endif()
 
 find_package(ament_cmake_auto REQUIRED)
@@ -21,7 +21,7 @@ if(NOT EIGEN3_FOUND)
 endif()
 
 find_package(OpenCV REQUIRED)
-
+find_package(image_geometry REQUIRED)
 ament_auto_add_library(${PROJECT_NAME} SHARED
   src/conversions.cpp
   src/convert_metric.cpp

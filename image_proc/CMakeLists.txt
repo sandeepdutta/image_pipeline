@@ -17,7 +17,7 @@ find_package(OpenCV REQUIRED)
 if(OpenCV_VERSION VERSION_LESS "3.2.0")
   message(FATAL "Minimum OpenCV version is 3.2.0 (found version ${OpenCV_VERSION})")
 endif()
-
+find_package(image_geometry REQUIRED)
 # image_proc library
 ament_auto_add_library(${PROJECT_NAME} SHARED
   src/${PROJECT_NAME}/processor.cpp
